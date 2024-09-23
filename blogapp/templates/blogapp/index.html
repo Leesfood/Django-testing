@@ -1,0 +1,217 @@
+{% extends "blogapp/base.html" %}
+
+{%block content %}
+     
+<div class="flex">
+    {% comment %} side bar {% endcomment %}
+    <aside  class="flex flex-col w-64 h-screen px-5 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700" >
+      <div class="flex flex-col justify-between flex-1 mt-5">
+        <div class="flex flex-col justify-between flex-1">
+          <nav>
+            <a   href=""  class="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md dark:bg-gray-800 dark:text-gray-200" >
+              <svg class="w-5 h-5"  viewBox="0 0 24 24"  fill="none" xmlns="http://www.w3.org/2000/svg" >
+                <path  d="M19 11H5M19 11C20.1046 11 21 11.8954 21 13V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V13C3 11.8954 3.89543 11 5 11M19 11V9C19 7.89543 18.1046 7 17 7M5 11V9C5 7.89543 5.89543 7 7 7M7 7V5C7 3.89543 7.89543 3 9 3H15C16.1046 3 17 3.89543 17 5V7M7 7H17"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"  />
+              </svg>
+
+              <span class="mx-4 font-medium">Dashboard</span>
+            </a>
+
+            <a   href=""  class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-md dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700">
+              <svg   class="w-5 h-5" viewBox="0 0 24 24"   fill="none"  xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path  d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="mx-4 font-medium">Employee</span>
+            </a>
+
+            <a href="" class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-md dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700" >
+              <svg class="w-5 h-5"  viewBox="0 0 24 24"  fill="none"  xmlns="http://www.w3.org/2000/svg">
+                <path  d="M15 5V7M15 11V13M15 17V19M5 5C3.89543 5 3 5.89543 3 7V10C4.10457 10 5 10.8954 5 12C5 13.1046 4.10457 14 3 14V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V14C19.8954 14 19 13.1046 19 12C19 10.8954 19.8954 10 21 10V7C21 5.89543 20.1046 5 19 5H5Z"   stroke="currentColor"  stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"  />
+              </svg>
+              <span class="mx-4 font-medium">Leave Type</span>
+            </a>
+
+            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-md dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700" href="#" >
+              <svg  class="w-5 h-5"  viewBox="0 0 24 24"  fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path  d="M10.3246 4.31731C10.751 2.5609 13.249 2.5609 13.6754 4.31731C13.9508 5.45193 15.2507 5.99038 16.2478 5.38285C17.7913 4.44239 19.5576 6.2087 18.6172 7.75218C18.0096 8.74925 18.5481 10.0492 19.6827 10.3246C21.4391 10.751 21.4391 13.249 19.6827 13.6754C18.5481 13.9508 18.0096 15.2507 18.6172 16.2478C19.5576 17.7913 17.7913 19.5576 16.2478 18.6172C15.2507 18.0096 13.9508 18.5481 13.6754 19.6827C13.249 21.4391 10.751 21.4391 10.3246 19.6827C10.0492 18.5481 8.74926 18.0096 7.75219 18.6172C6.2087 19.5576 4.44239 17.7913 5.38285 16.2478C5.99038 15.2507 5.45193 13.9508 4.31731 13.6754C2.5609 13.249 2.5609 10.751 4.31731 10.3246C5.45193 10.0492 5.99037 8.74926 5.38285 7.75218C4.44239 6.2087 6.2087 4.44239 7.75219 5.38285C8.74926 5.99037 10.0492 5.45193 10.3246 4.31731Z" stroke="currentColor"   stroke-width="2"  stroke-linecap="round" stroke-linejoin="round" />
+                <path  d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="mx-4 font-medium">Sites</span>
+            </a>
+
+            <hr class="my-6 border-gray-200 dark:border-gray-600" />
+            <a  class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-md dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"  href="#" >
+              <svg   class="w-5 h-5"  viewBox="0 0 24 24"  fill="none"   xmlns="http://www.w3.org/2000/svg" >
+                <path   d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"    stroke-linejoin="round" />
+                <path  d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z"  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+
+              <span class="mx-4 font-medium">User</span>
+            </a>
+
+            <a  class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-md dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"  href="#" >
+              <svg  class="w-5 h-5"  viewBox="0 0 24 24"  fill="none"  xmlns="http://www.w3.org/2000/svg" >
+                <path  d="M10.3246 4.31731C10.751 2.5609 13.249 2.5609 13.6754 4.31731C13.9508 5.45193 15.2507 5.99038 16.2478 5.38285C17.7913 4.44239 19.5576 6.2087 18.6172 7.75218C18.0096 8.74925 18.5481 10.0492 19.6827 10.3246C21.4391 10.751 21.4391 13.249 19.6827 13.6754C18.5481 13.9508 18.0096 15.2507 18.6172 16.2478C19.5576 17.7913 17.7913 19.5576 16.2478 18.6172C15.2507 18.0096 13.9508 18.5481 13.6754 19.6827C13.249 21.4391 10.751 21.4391 10.3246 19.6827C10.0492 18.5481 8.74926 18.0096 7.75219 18.6172C6.2087 19.5576 4.44239 17.7913 5.38285 16.2478C5.99038 15.2507 5.45193 13.9508 4.31731 13.6754C2.5609 13.249 2.5609 10.751 4.31731 10.3246C5.45193 10.0492 5.99037 8.74926 5.38285 7.75218C4.44239 6.2087 6.2087 4.44239 7.75219 5.38285C8.74926 5.99037 10.0492 5.45193 10.3246 4.31731Z" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor" stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"/>
+              </svg>
+              <span class="mx-4 font-medium">Permission</span>
+            </a>
+            <a  class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-md dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"  href="#" >
+              <svg  class="w-5 h-5"  viewBox="0 0 24 24"  fill="none"  xmlns="http://www.w3.org/2000/svg">
+                <path  d="M10.3246 4.31731C10.751 2.5609 13.249 2.5609 13.6754 4.31731C13.9508 5.45193 15.2507 5.99038 16.2478 5.38285C17.7913 4.44239 19.5576 6.2087 18.6172 7.75218C18.0096 8.74925 18.5481 10.0492 19.6827 10.3246C21.4391 10.751 21.4391 13.249 19.6827 13.6754C18.5481 13.9508 18.0096 15.2507 18.6172 16.2478C19.5576 17.7913 17.7913 19.5576 16.2478 18.6172C15.2507 18.0096 13.9508 18.5481 13.6754 19.6827C13.249 21.4391 10.751 21.4391 10.3246 19.6827C10.0492 18.5481 8.74926 18.0096 7.75219 18.6172C6.2087 19.5576 4.44239 17.7913 5.38285 16.2478C5.99038 15.2507 5.45193 13.9508 4.31731 13.6754C2.5609 13.249 2.5609 10.751 4.31731 10.3246C5.45193 10.0492 5.99037 8.74926 5.38285 7.75218C4.44239 6.2087 6.2087 4.44239 7.75219 5.38285C8.74926 5.99037 10.0492 5.45193 10.3246 4.31731Z"   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  />
+                <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"  stroke="currentColor"  stroke-width="2"   stroke-linecap="round" stroke-linejoin="round"  />
+              </svg>
+              <span class="mx-4 font-medium">Settings</span>
+            </a>
+          </nav>
+          <div class="flex items-center justify-between mb-3">
+            <a href="#" class="flex items-center gap-x-2">
+                <img  class="object-cover rounded-full h-7 w-7"   src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&h=634&q=80" alt="avatar"  />
+                <span   class="text-sm font-medium text-gray-700 dark:text-gray-200" >
+                    Sophanna
+                </span>
+            </a>
+            <a   href="#"  class="text-gray-500 transition-colors duration-200 rotate-180 dark:text-gray-400 rtl:rotate-0 hover:text-blue-500 dark:hover:text-blue-400" >
+              <svg xmlns="http://www.w3.org/2000/svg"   fill="none"  viewBox="0 0 24 24"  stroke-width="1.5"  stroke="currentColor"  class="w-5 h-5" >
+                <path  stroke-linecap="round"  stroke-linejoin="round"  d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Table section -->
+    <div class="flex-grow flex-col mt-3 w-full">
+      <section class="container px-4 mx-auto">
+        <div class="md:flex md:items-center md:justify-between">
+          <div class="inline-flex overflow-hidden bg-white border divide-x rounded-lg dark:bg-gray-900 rtl:flex-row-reverse dark:border-gray-700 dark:divide-gray-700" ></div>
+          <div class="relative flex items-center mt-4 md:mt-0">
+            <span class="absolute">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none"  viewBox="0 0 24 24" stroke-width="1.5"   stroke="currentColor" class="w-5 h-5 mx-3 text-gray-400 dark:text-gray-600"  >
+                <path stroke-linecap="round"  stroke-linejoin="round"  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
+            </span>
+            <input  type="text"  placeholder="Search" class="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg md:w-80 placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+          </div>
+        </div>
+        <div class="flex flex-col mt-6">
+          <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div  class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+              <div  class="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg" >
+                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700" >
+                  <thead class="bg-gray-50 dark:bg-gray-800">
+                    <tr>
+                      <th  scope="col"  class="py-3.5 border-r-[1px] px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <div class="flex items-center gap-x-3">
+                          <input  type="checkbox"  class="text-blue-500 border-gray-300 rounded dark:bg-gray-900 dark:ring-offset-gray-900 dark:border-gray-700"/>
+                          <span>Name</span>
+                        </div>
+                      </th>
+
+                      <th scope="col"  class="px-4 border-r-[1px] py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400" >
+                       Photos
+                      </th>
+                      <th scope="col"  class="px-4 border-r-[1px] py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400" >
+                        Email
+                      </th>
+                      <th scope="col"  class="px-4 border-r-[1px] py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400" >
+                        Slug
+                      </th>
+                      <th scope="col"  class="px-4 border-r-[1px] py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400" >
+                       Date
+                      </th>
+                      <th scope="col"   class="px-4 border-r-[1px] py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400" >
+                        Status
+                      </th>
+                      <th scope="col"   class="px-5 border-r-[1px] py-3.5 text-sm font-normal rtl:text-right text-gray-500 dark:text-gray-400">
+                        Action
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody  class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900" >
+                    {% for trending in trending_posts %}
+                    <tr>
+                      <td class="px-4 py-4 border-r-[1px] text-sm font-medium text-gray-700 whitespace-nowrap">
+                        <div class="inline-flex items-center gap-x-3">
+                          <input  type="checkbox" class="text-blue-500 border-gray-300 rounded dark:bg-gray-900 dark:ring-offset-gray-900 dark:border-gray-700"/>
+                          <div class="flex items-center gap-x-2">
+                            <h2  class="font-medium text-gray-800 dark:text-white">
+                              {{ trending.title }}
+                            </h2>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 border-r-[1px] py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap" >
+                       
+                        <img class="object-cover w-10 h-10 rounded-full" src="{{ post.image.url }}" alt="">
+
+                      </td>
+                      <td class="px-4 border-r-[1px] py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap" >
+                        {{ trending.body }}
+                      </td>
+                      <td class="px-4 py-4 border-r-[1px] text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                        {{ trending.slug }}
+                      </td>
+                      <td class="px-4 py-4 border-r-[1px] text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap"> {{ trending.date }}</td>
+                     
+                      </td>
+                      <td  class="px-12 border-r-[1px] py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                        <div  class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
+                          <span  class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                          <h2 class="text-sm font-normal text-emerald-500">
+                            Active
+                          </h2>
+                        </div>
+                      </td>
+                      <td class="px-4 py-4 text-sm whitespace-nowrap">
+                        <div class="flex items-center gap-x-6">
+                          <button   class="text-gray-500 transition-colors duration-200 dark:hover:text-yellow-500 dark:text-gray-300 hover:text-yellow-500 focus:outline-none" >
+                            <svg  xmlns="http://www.w3.org/2000/svg"  fill="none"  viewBox="0 0 24 24"  stroke-width="1.5"  stroke="currentColor"  class="w-5 h-5" >
+                              <path  stroke-linecap="round"  stroke-linejoin="round"   d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                            </svg>
+                          </button>
+                          <button   class="text-gray-500 transition-colors duration-200 dark:hover:text-red-500 dark:text-gray-300 hover:text-red-500 focus:outline-none"  >
+                            <svg  xmlns="http://www.w3.org/2000/svg" fill="none"  viewBox="0 0 24 24"  stroke-width="1.5"  stroke="currentColor"  class="w-5 h-5">
+                              <path stroke-linecap="round"   stroke-linejoin="round"   d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"/>
+                            </svg>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                   
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between mt-6">
+          <a   href="#"  class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800">
+            <svg  xmlns="http://www.w3.org/2000/svg"  fill="none"  viewBox="0 0 24 24" stroke-width="1.5"  stroke="currentColor"  class="w-5 h-5 rtl:-scale-x-100" >
+              <path   stroke-linecap="round"   stroke-linejoin="round"   d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+            </svg>
+            <span> previous </span>
+          </a>
+
+          <div class="items-center hidden lg:flex gap-x-3">
+            <a  href="#"  class="px-2 py-1 text-sm text-blue-500 rounded-md dark:bg-gray-800 bg-blue-100/60"  >1</a>
+            <a  href="#"  class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100" >2</a>
+            <a   href="#"  class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">3</a>
+          </div>
+
+          <a href="#"  class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800">
+            <span> Next </span>
+
+            <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"  stroke="currentColor"  class="w-5 h-5 rtl:-scale-x-100">
+              <path  stroke-linecap="round"  stroke-linejoin="round"  d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+            </svg>
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+{% endblock %}
