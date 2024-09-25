@@ -11,26 +11,22 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-import os
-
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = os.environ.get("DEBUG", "FALSE").lower() == "TRUE"
+DEBUG = os.environ.get("DEBUG", "FALSE").lower() == "true"
+
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost").split(",")
-
-
 
 
 # Application definition
@@ -42,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blogapp'
+    'blogapp',
 ]
 
 MIDDLEWARE = [
@@ -79,31 +75,24 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-import dj_database_url
-import os
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'test_db',
         'PORT': 5432,
-        'HOST': 'localhost',
+        'HOST': 'localhost',  # Ensure single correct 'localhost'
         'USER': 'postgres',
         'PASSWORD': 'postgres',
     }
 }
+
+# Check for DATABASE_URL in environment and override if available
 database_url = os.environ.get("DATABASE_URL")
 
 if database_url:
     DATABASES["default"] = dj_database_url.parse(database_url)
-# DATABASES["default"] = dj_database_url.parse(database_url)
-# postgresql://adminportal_leesfood_django_user:SimEsIu7xWlws9ynCuynExx0tXVgk7qk@dpg-crpn3lrv2p9s7388e6eg-a.oregon-postgres.render.com/adminportal_leesfood_django
+
+
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
@@ -140,9 +129,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
-MEDIA_URL = '/image/'
 
-MEDIA_ROOT = BASE_DIR/'static/image'
+MEDIA_URL = '/image/'
+MEDIA_ROOT = BASE_DIR / 'static/image'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
