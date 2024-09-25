@@ -1,7 +1,13 @@
-from django.contrib import admin
-from django.urls import path, include
+# from django.urls import path
+# from . import views
+# urlpatterns = [
+#     path('', views.index, name= 'index'),
+#     path('readmore', views.readmore, name= 'readmore'),
+# ]
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('blog/', include('blogapp.urls')),  # Includes the blogapp's URLs
+    path('', views.index, name='index'),
+    path('readmore', views.readmore, name='readmore'),
 ]
