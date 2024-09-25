@@ -49,11 +49,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'test_db',
         'PORT': 5432,
-        'HOST': 'Localhost',
+        'HOST': 'localhost',  # Make sure this is lowercase
         'USER': 'postgres',
         'PASSWORD': 'postgres',
     }
 }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
