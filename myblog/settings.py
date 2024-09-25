@@ -3,7 +3,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-e#+p7bg_w+1i$$rgidw6x1!6^)a)4%228t5giqb-(!di9*m%_4'
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-testing-mloe.onrender.com', 'localhost', '127.0.0.1']
+
 
 # Application definition
 INSTALLED_APPS = [
