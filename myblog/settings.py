@@ -86,19 +86,23 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 #     }
 # }
 
-
+import dj_database_url
+import os
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'test_db',
         'PORT': 5432,
-        'HOST': 'Localhost',
+        'HOST': 'localhost',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
     }
 }
 database_url = os.environ.get("DATABASE_URL")
-DATABASES["default"] = dj_database_url.parse(database_url)
+
+if database_url:
+    DATABASES["default"] = dj_database_url.parse(database_url)
+# DATABASES["default"] = dj_database_url.parse(database_url)
 # postgresql://adminportal_leesfood_django_user:SimEsIu7xWlws9ynCuynExx0tXVgk7qk@dpg-crpn3lrv2p9s7388e6eg-a.oregon-postgres.render.com/adminportal_leesfood_django
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
