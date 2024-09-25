@@ -1,17 +1,9 @@
 from django.shortcuts import render
 from .models import Post
-import pyrebase
 
 
-config={
-    apiKey: "AIzaSyCmD_ctc82-77-PwrslQ00VI0bJK59EbBA",
-    authDomain:"",
-    databaseURL:"",
-    projectId:"test-75f3e",
-    storageBucket:"",
-    messaginSendId:"",
-    appId:""
-}
+
+
 # Create your views here.
 
 def index(request):
